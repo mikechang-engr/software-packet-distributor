@@ -6,6 +6,8 @@
 
 ## Overview
 
+> **Status:** Early open-source baseline (v1.0.0). Actively evolving toward TISF 2027.
+
 The **Software Packet Distributor (SPD)** is a DPDK-based, software-only packet distribution framework designed for embedded multicore networking systems. It addresses the limitations of static RSS (5-tuple hashing), which can suffer from load imbalance when traffic contains skewed or elephant flows.
 
 SPD introduces a **Greedy Reshaper** that continuously observes runtime telemetry and performs bounded, in-place reshaping of flow-to-core mappings. The result is improved fairness and more stable utilization across worker cores, without relying on NIC-specific hardware features.
