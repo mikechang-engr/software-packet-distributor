@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "software-packet-distributor"
+version: "v1.0.5"
+authors:
+  - family-names: Chang
+    given-names: Mike
+    email: mikechang.engr@gmail.com
+license: BSD-3-Clause
+date-released: "2026-01-30"
+repository-code: "https://github.com/mikechang-engr/software-packet-distributor"
+abstract: >
+  DPDK-based packet distributor using XXH32/XXH64 signatures with a compact
+  FAT (56+3+5) tag table and RETA fallback; optional greedy reshaper.
