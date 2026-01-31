@@ -2,6 +2,8 @@
 
 [![License](https://img.shields.io/badge/license-BSD--3--Clause-blue.svg)](LICENSE)
 
+The Software Packet Distributor (SPD) is a software‑only, flow‑aware Ethernet packet distribution framework built on DPDK, designed for embedded multicore systems. Its goal is to overcome static RSS’s weaknesses—especially load imbalance caused by elephant flows—by dynamically reshaping flow‑to‑core assignments using a Greedy Reshaper.
+
 High-performance **DPDK**-based packet distributor featuring a compact **FAT** tag
 cache (8-byte entry; 56+3+5 packing) with **RETA** fallback, **XXH32/XXH64** flow
 signatures, and an optional **Greedy Reshaper** that incrementally remaps RETA
