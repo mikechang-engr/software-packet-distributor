@@ -1,6 +1,9 @@
 # Software Packet Distributor (SPD) — Architecture Diagram (v1.0.5)
 
-**Author:** Mike Chang  **Contact:** mikechang.engr@gmail.com  **Date:** 2026-01-31 19:08 (Taipei, GMT+08:00)  **Copyright:** © 2026 Mike Chang. All rights reserved.
+**Author:** Mike Chang  
+**Contact:** mikechang.engr@gmail.com  
+**Date:** 2026-01-31 19:08 (Taipei, GMT+08:00)  
+**Copyright:** © 2026 Mike Chang. All rights reserved.
 
 > This document provides a top‑down ASCII architecture diagram for the SPD
 > data path and briefly describes the packet flow, LX2160A core layout, and
