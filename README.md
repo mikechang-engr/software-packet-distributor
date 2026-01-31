@@ -148,9 +148,14 @@ make -j"$(nproc)"
 - Start script features **INT → TERM → KILL** signal escalation and **newline-safe logging**.
 
 ### Core Layout (example mapping)
-- `--main-lcore`: **2**  
-- Perf: **5**; Dist-A: **6**; Dist-B: **7**; Generator: **4**; Sink: **3**  
-- Workers: **8–15** (8 workers)
+- Core-0,1: Linux housekeeping/IRQs (reserved)
+- Core-2: DPDK main
+- Core-3: sink
+- Core-4: generator
+- Core-5: perf + Greedy Reshaper
+- Core-6: distributor-A
+- Core-7: distributor-B
+- Cores 8–15: workers (eight workers; four 2-core clusters share 1MB L2)
 
 ### Environment Knobs
 - `TARGET_MPPS` or `TARGET_GBPS` — traffic rate (**MPPS overrides GBPS**)
@@ -179,7 +184,6 @@ Include plots/tables for:
 - Adaptive multi-stage reshaping heuristics
 - Congestion-aware (queue-aware) bucket ranking
 - Optional ML-guided flow hotness prediction
-- Extended validation on additional SoCs/NICs
 - Reproducible benchmarks with public datasets and traffic profiles
 
 ---
