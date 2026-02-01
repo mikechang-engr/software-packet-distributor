@@ -185,6 +185,7 @@ Include plots/tables for:
 ## Roadmap (toward TISF 2027)
 - Adaptive multi-stage reshaping heuristics
 - Congestion-aware (queue-aware) bucket ranking
+- Replace Greedy Reshaper algorithm with MLP based Edge AI 
 - Optional ML-guided flow hotness prediction
 - Reproducible benchmarks with public datasets and traffic profiles
 
