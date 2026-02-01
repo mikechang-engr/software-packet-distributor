@@ -57,7 +57,9 @@ Workers (per-core packet processing)
 Sink
 ```
 
-- **Distributor-A**: performs initial hashing and fast-path bucket lookup using a compact **FAT tag cache** (8-byte entry, 56+3+5 packing); on miss, falls back to **RETA**.
+- **Distributor-A**: performs initial hashing and fast-path bucket lookup using a compact **FAT tag cache**; on miss, falls back to **RETA**.
+- **FAT (flow affinity table)**: 2048×8‑byte tag cache (56‑bit fingerprint + 3‑bit worker + 5‑bit age), up to 8 probes; hit returns worker.
+- **RETA (redirection table)**: 256‑entry indirection table randomized at init; used on FAT miss and adjusted by Greedy with bounded in‑place moves.
 - **Greedy Reshaper**: collects telemetry and applies **bounded, in-place** bucket reassignments.
 - **Distributor-B**: forwards packets using the updated mapping.
 - **Workers**: dedicated cores for packet processing.
