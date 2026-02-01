@@ -114,7 +114,7 @@
   - `mp` (mbufs) sized to workload; `pipe_pool` holds distributor items
     (`struct dist_item`). *Source: `create_mempools()`; `MBUF_DATAROOM=2176`,
     `POOL_CACHE=256`.*
-- **RETA (software indirection table):** 256 entries, shuffled at init; used on
+- **RETA (software redirection table):** 256 entries, shuffled at init; used on
   FAT miss. *Source: `RETA_SZ=256`, `build_reta()`.*
 - **FAT tag cache:** 2048 entries, **8 bytes each** with **56+3+5** packing
   (flow fp56, worker index 3 bits, 5-bit modular age), up to **8 probes** per
