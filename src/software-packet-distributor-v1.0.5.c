@@ -401,6 +401,24 @@ static void mutate_flows_chunk(unsigned sec_idx, unsigned cycle_idx)
   for (unsigned i = start; i < end; i++) { Flow *f = &g_flows[i]; f->src_ip[2] = (uint8_t)(f->src_ip[2] + s2); f->src_ip[3] = (uint8_t)(f->src_ip[3] + s3); f->dst_ip[2] = (uint8_t)(f->dst_ip[2] + d2); f->dst_ip[3] = (uint8_t)(f->dst_ip[3] + d3); f->sport_base = (uint16_t)(f->sport_base + si); f->dport_base = (uint16_t)(f->dport_base + di); if (((i - start + cycle_idx) & 3u) == 0u) { f->proto = (f->proto == PROTO_UDP) ? PROTO_TCP : PROTO_UDP; } }
   reshuffle_wheel();
 }
+
+/*
+ * Greedy Shaper Overview
+ * ----------------------
+ * The greedy shaper periodically examines A72 worker cores to identify the
+ * most heavily loaded worker and redistributes flows to achieve load balance.
+ * From the pool of 256 flows, any flow currently mapped to an overloaded
+ * worker may be reassigned to a less busy worker.
+ *
+ * The current implementation triggers a greedy-shaper cycle every 200 micro-
+ * seconds. Under dual 25 GbE input with 64-byte packets, this interval may be
+ * too coarse; a packet-based trigger (e.g., reshaping every ~1000 packets,
+ * depending on DPIO buffer depth) may provide improved responsiveness.
+ *
+ * Static flow-to-worker binding is not currently supported and should be
+ * considered in future algorithm design.
+ */
+
 /* Minimal greedy reshaper: move RETA entries from hottest to coldest worker. */
 static unsigned greedy_reshaper_tick(const double *rx_vals, unsigned max_moves)
 {
