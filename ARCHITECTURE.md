@@ -130,6 +130,22 @@
 
 ---
 
+## Greedy Shaper Overview
+  The greedy shaper periodically examines A72 worker cores to identify the
+  most heavily loaded worker and redistributes flows to achieve load balance.
+  From the pool of 256 flows, any flow currently mapped to an overloaded
+  worker may be reassigned to a less busy worker.
+
+  The current implementation triggers a greedy-shaper cycle every 200 micro-
+  seconds. Under dual 25 GbE input with 64-byte packets, this interval may be
+  too coarse; a packet-based trigger (e.g., reshaping every ~1000 packets,
+  depending on DPIO buffer depth) may provide improved responsiveness.
+
+  Static flow-to-worker binding is not currently supported and should be
+  considered in future algorithm design.
+
+---
+
 ## Notes
 - Newline‑safe logging is used throughout; lines are terminated via `puts` or
   `putchar(10)` to remain viewer‑friendly in logs.
