@@ -1,7 +1,9 @@
-Release date: 2026-02-16 09:45 (Taipei, GMT+08:00)
-Author: Mike Chang (mikechang.engr@gmail.com)
-Repository: https://github.com/mikechang-engr/software-packet-distributor
-Title: Software Packet Distributor v1.0.5 Performance Analysis
+# Software Packet Distributor (SPD) V1.0.5 Performance Analysis
+
+**Author:** Mike Chang  
+**Contact:** mikechang.engr@gmail.com  
+**Date:** 2026-02-16 09:45 (Taipei, GMT+08:00)  
+**Copyright:** © 2026 Mike Chang. All rights reserved.
 
 
 ## Overview
