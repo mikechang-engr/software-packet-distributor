@@ -1,8 +1,12 @@
-Release date: 2026-02-17 10:05 (Taipei, GMT+08:00)
-Author: Mike Chang (mikechang.engr@gmail.com)
-Repository: https://github.com/mikechang-engr/software-packet-distributor
-File: System log of Software Packet Distributor v1.0.5 runs (4 cases)
-Notes: Sanitized IP/MAC and personal paths for public sharing.
+# SPD v1.0.5 System Log & Test Cases
+
+**Release date:** 2026-02-17 10:05 (Taipei, GMT+08:00)
+**Author:** Mike Chang (mikechang.engr@gmail.com)
+**Repository:** https://github.com/mikechang-engr/software-packet-distributor
+**File:** System log of Software Packet Distributor v1.0.5 runs (4 cases)
+**Notes:** Sanitized IP/MAC and personal paths for public sharing.
+
+---
 
 ## System Log (Sanitized)
 
